@@ -60,13 +60,13 @@ Plaintext. Returns versions supported by the server. Plaintext.
 *Encrypted.* Returns methods supported by the server (Since a server might not be fully supporting all methods defined in its version, non-compliant).
 
 #### ANIM
-*Encrypted.* Returns all stored animal names starting with the string in body.
+*Encrypted.* Returns all stored animal names starting with the string in body. Case-sensitive.
 
 #### SOUN
-*Encrypted.* Returns all stored animal sounds starting with the string in body.
+*Encrypted.* Returns all stored animal sounds starting with the string in body. Case-sensitive.
 
 #### ATOS
-*Encrypted.* Returns animal sound given a valid animal name.
+*Encrypted.* Returns animal sound given a valid animal name as provided in body. Case-sensitive.
 
 ### Version 3
 Exactly like version 2, just.... There is something special about this version.
@@ -85,3 +85,10 @@ Note, Cats are cute, but so are frogs ;)
 
 - ASP server receives an invalid key.
 - Returns plaintext: `ASPERR: Invalid key 'x'`
+
+- ASP server receives a malformed body.
+- Returns encrypted: `ASPERR: Invalid body.`
+
+- ASP server receives an animal that is not available.
+- Returns encrypted: `ASPERR: Animal not found.`
+
