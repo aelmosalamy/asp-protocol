@@ -47,7 +47,7 @@ ASP Version 1 is severely limited. It only supports the `CAPS` method.
 ### Version 2
 ASP uses the battle-tested, secure Caesar Cipher algorithm for encryption using the client-provided key in some methods. These has "Encrypted." prepended to them.
 
-In methods marked as *Encrypted*, clients must encrypt their Method and Body using the key they provide in the same request.
+In methods marked as *Encrypted*, clients must encrypt their Method using the key they provide in the same request.
 
 The rest of the packet must remain unencrypted to ensure the server understands the request and how to decrypt it.
 
