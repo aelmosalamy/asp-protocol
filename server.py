@@ -49,7 +49,7 @@ def validate_and_decrypt_header(data) :
     if data['version'] not in supported_versions:
         return f"ASPERR: Unsupported version '{data['version']}'."
 
-    if data['key'] < 0 or data['key'] > 25:
+    if data['key'] < 1 or data['key'] > 25:
         return f"ASPERR: Invalid key '{data['key']}'."
 
     data['method'] = CaesarCipher(data['method'], offset=data['key']).decoded
